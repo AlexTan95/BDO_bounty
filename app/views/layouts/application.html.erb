@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Black Desert Bounty</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<%= link_to "Home", :root %>
+
+    <% if current_user %>
+      Signed in as <%= current_user.ign %> | <%= link_to "Logout", '/logout' %>
+    <% else %>
+      <%= link_to "Login", '/login' %> | <%= link_to "Sign Up", '/signup' %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

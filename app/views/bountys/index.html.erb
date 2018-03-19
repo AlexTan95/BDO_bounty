@@ -1,0 +1,13 @@
+<div class="testing"><h1>WELCOME HUNTERS</h1></div><br>
+<%= link_to "New Bounty", '/bountys/new' %>
+<div class="bountybox">
+	<div class="bountylist"><h2>Bounty List</h2></div><br>
+	<% @bountys.each do |b| %>
+		<h3><%= link_to b.target, bounty_path(b.id) %></h3>
+		<p>Level:  <%= b.target_level %></p>
+		<p>Class:  <%= b.target_class %></p>
+		<p>Reward: <%= b.bounty_reward %></p>
+
+	<% end %>
+
+</div>

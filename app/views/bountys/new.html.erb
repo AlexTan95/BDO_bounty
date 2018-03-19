@@ -1,0 +1,43 @@
+<h1>New Bounty</h1>
+
+<%= form_for :bounty, url: bountys_path do |f| %>
+	<p>
+		<%= f.label :target %><br>
+		<%= f.text_field :target %>
+	</p>
+
+	<p>
+		<%= f.label :target_class %>
+		<%= f.select :target_class, ['Warrior', 'Valkryie' 'Ranger', 'Berserker', 'Ninja', 'Kunoichi', 'Sorcerer', 'Wizard', 'Witch'] %>
+	</p>
+
+	<p>
+		<%= f.label :target_level %>
+		<%= f.select :target_level, [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65] %>
+	</p>
+
+	<p>
+		<%= f.label :last_seen_server %><br>
+		<%= f.text_field :last_seen_server %>
+	</p>
+
+	<p>
+		<%= f.label :reason %><br>
+		<%= f.text_area :reason %>
+	</p>
+
+	<p>
+		<%= f.label :kill_condition, 'Kill condition (optional)' %><br>
+		<%= f.text_area :kill_condition %>
+	</p>
+
+	<p>
+		<%= f.label :bounty_reward %><br>
+		<%= f.text_area :bounty_reward %>
+	</p>
+
+	<p>
+		<%= f.submit "Post Bounty" %>
+	</p>
+
+<% end %>
