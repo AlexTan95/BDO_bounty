@@ -1,6 +1,7 @@
 class CreateBounties < ActiveRecord::Migration[5.1]
   def change
     create_table :bounties do |t|
+      t.string :client
     	t.string :target
     	t.text :reason
     	t.integer :target_level

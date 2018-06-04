@@ -1,43 +1,34 @@
-<h1>New Bounty</h1>
 
-<%= form_for :bounty, url: bountys_path do |f| %>
-	<p>
-		<%= f.label :target %><br>
-		<%= f.text_field :target %>
-	</p>
+<div class="bounty-form-box">
+	<div class="bounty-form-content">
+		<h1 class="new-bounty-title">New Bounty</h1><br>
 
-	<p>
-		<%= f.label :target_class %>
-		<%= f.select :target_class, ['Warrior', 'Valkryie' 'Ranger', 'Berserker', 'Ninja', 'Kunoichi', 'Sorcerer', 'Wizard', 'Witch'] %>
-	</p>
+		<%= form_for :bounty, url: bountys_path do |f| %>
 
-	<p>
-		<%= f.label :target_level %>
-		<%= f.select :target_level, [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65] %>
-	</p>
+				<%= f.label :target, 'Target (Character name)' %><br>
+				<%= f.text_field :target, :required=> true %><br><br>
+			
+				<%= f.label :target_class %><br>
+				<%= f.select :target_class, ['Warrior', 'Valkryie', 'Ranger', 'Berserker', 'Ninja', 'Kunoichi', 'Sorcerer', 'Wizard', 'Witch', 'Maehwa', 'Musa'], :required=> true %><br><br>
+			
+				<%= f.label :target_level %><br>
+				<%= f.select :target_level, ['unknown', 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65] %><br><br>
+			
+				<%= f.label :last_seen_server %><br>
+				<%= f.text_field :last_seen_server, :required=> true  %><br><br>
+			
+				<%= f.label :reason %><br>
+				<%= f.text_area :reason %><br><br>
+			
+				<%= f.label :kill_condition, 'Kill condition (optional)' %><br>
+				<%= f.text_area :kill_condition %><br><br>
+			
+				<%= f.label :bounty_reward %><br>
+				<%= f.text_area :bounty_reward, :required=> true %><br><br>
 
-	<p>
-		<%= f.label :last_seen_server %><br>
-		<%= f.text_field :last_seen_server %>
-	</p>
-
-	<p>
-		<%= f.label :reason %><br>
-		<%= f.text_area :reason %>
-	</p>
-
-	<p>
-		<%= f.label :kill_condition, 'Kill condition (optional)' %><br>
-		<%= f.text_area :kill_condition %>
-	</p>
-
-	<p>
-		<%= f.label :bounty_reward %><br>
-		<%= f.text_area :bounty_reward %>
-	</p>
-
-	<p>
-		<%= f.submit "Post Bounty" %>
-	</p>
-
-<% end %>
+				<%= f.hidden_field :client, :value=> @current_user.ign %>
+			
+				<%= f.button "Post Bounty", {:class=>"bounty-form-button"} %><br>
+		<% end %>
+	</div>
+</div>

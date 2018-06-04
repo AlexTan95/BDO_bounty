@@ -1,10 +1,17 @@
-<h2><%= @bounty.target %></h2>
-<h4>Level: <%= @bounty.target_level %></h4>
-<h4>Class: <%= @bounty.target_class %></h4>
-<h4>Last seen server: <%= @bounty.last_seen_server %></h4>
-<h4>Reason: </h4>
-<p><%= @bounty.reason %><p>
-<h4>Kill condition:</h4>
-<p><%= @bounty.kill_condition %></p>
-<h4>Bounty Reward</h4>
-<p><%= @bounty.bounty_reward %></p>
+<div class= "show-ctn">
+	<%= @bounty.target %>
+	<h4>Level: <% if @bounty.target_level == 0 %>
+					<%= "Unknown" %>
+				<% else %>
+					<%= @bounty.target_level %>
+				<% end %>
+	</h4>
+	<h4>Class: <%= @bounty.target_class %></h4>
+	<h4>Last seen server: <%= @bounty.last_seen_server %></h4>
+	<h4>Reason: </h4>
+	<p><%= @bounty.reason %><p>
+	<h4>Kill condition:</h4>
+	<p><%= @bounty.kill_condition %></p>
+	<h4>Bounty Reward</h4>
+	<p><%= @bounty.bounty_reward %></p>
+</div>

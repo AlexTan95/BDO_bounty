@@ -9,14 +9,22 @@
   </head>
 
   <body>
-  	<%= link_to "Home", :root %>
-
-    <% if current_user %>
-      Signed in as <%= current_user.ign %> | <%= link_to "Logout", '/logout' %>
-    <% else %>
-      <%= link_to "Login", '/login' %> | <%= link_to "Sign Up", '/signup' %>
-    <% end %>
-
+    <div class="navibar">
+      <ul class="navibar-list">
+        <li><%= link_to "Home", :root, {:class=>"navibar-content"} %></li>
+        <li><%= link_to "Rules", :root, {:class=>"navibar-content"} %></li>
+        <li><%= link_to "About", :root, {:class=>"navibar-content"} %></li>
+        <li><%= link_to "Contact", :root, {:class=>"navibar-content"} %></li>
+        <% if current_user %>
+          <li style="float:right"><%= link_to "Logout", '/logout', {:class=>"navibar-content"} %></li>
+          <li style="float:right"><%= link_to current_user.ign, :root, {:class=>"navibar-content"} %></li>
+        <% else %>
+          <li style="float:right"><%= link_to "Sign Up", '/signup', {:class=>"navibar-content"} %></li>
+          <li style="float:right"><%= link_to "Login", '/login', {:class=>"navibar-content"} %></li>
+        <% end %>
+      </ul>
+    </div>
+    
     <%= yield %>
   </body>
 </html>

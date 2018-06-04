@@ -12,7 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20180314080402) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bounties", force: :cascade do |t|
+    t.string "client"
     t.string "target"
     t.text "reason"
     t.integer "target_level"

@@ -1,10 +1,17 @@
-<h1>Login</h1>
+<div class="login-container">
+	<h1 class="login">LOGIN</h1>
 
-<%= form_tag '/login' do %>
-	Email: <%= text_field_tag :email %>
-	Password: <%= text_field_tag :password %>
+	<% flash.each do |test1, test2| %> <!-- flash defined in session_controller.rb -->
+      <div class="alert-<%= test1 %>"> <!-- test1 #=> error , test2 #=> invalid password or email-->
+        <%= test2 %>
+      </div><br>
+    <% end %>
 
-	<%= submit_tag "Login" %>
+	<%= form_tag '/login' do %>
+		<%= text_field_tag :email, "", placeholder: "Email"%><br><br>
+		<%= password_field_tag :password, "", placeholder: "Password" %><br>
 
-<% end %>
+		<div class="login-btn-ctn"><%= button_tag "Login", {:class=>"login-button"} %></div>
 
+	<% end %>
+</div>

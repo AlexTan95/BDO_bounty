@@ -9,6 +9,7 @@ class BountysController < ApplicationController
 	end
 
 	def new #new bounty
+		authorize
 	end
 	
 	def create
@@ -21,6 +22,6 @@ class BountysController < ApplicationController
 	private
 
 	def bounty_params
-		params.require(:bounty).permit(:target, :reason, :target_level, :target_class, :last_seen_server, :bounty_reward, :kill_condition)
+		params.require(:bounty).permit(:target, :reason, :target_level, :target_class, :last_seen_server, :bounty_reward, :kill_condition, :client)
 	end
 end

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Black Desert Bounty</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+  	     <%= link_to "BDO Bounty", :root, {:class=>"navbar-brand"} %>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to "Home", :root, {:class=>"active"} %></li>
+          <li><%= link_to "Rules", :root %></li>
+          <li><%= link_to "About", :root %></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+      <% if current_user %>
+        Signed in as <%= current_user.ign %> | <%= link_to "Logout", '/logout' %>
+      <% else %>
+        <%= link_to "Login", '/login' %> | <%= link_to "Sign Up", '/signup' %>
+      <% end %>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>

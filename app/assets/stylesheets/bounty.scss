@@ -2,19 +2,140 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.testing{
-	color: green;
+.bty-nbty {
+	list-style-type: none;
+	padding: 50px 10%;
 	text-align: center;
-	font: 15px arial,sans-serif;
 }
 
-.bountybox{
-	background-color: rgba(0,0,0,0.3);
+.float {
+	float:right;
+}
+
+.new-bounty {
+	display: block;
+	color: white;
+	text-align: center;
 	padding: 10px;
+	text-decoration: none;
+	font-family: verdana,sans-serif;
+	font-size: 20px;
+	width: 150px;
+	background-color: #ef5859;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-top: 15px;
 }
 
-.bountylist{
-	font: 15px arial,sans-serif;
-	color: purple;
+.bountylist {
+	font-family: verdana,sans-serif;
+	font-size: 20px;
+	color: white;
+}
+
+.bountybox {
+	background-color: rgba(0,0,0,0.3);
+	padding: 30px 15px;
+	text-decoration: none;
+	font-family: verdana,sans-serif;
+	font-size: 15px;
+	color: white;
+	width: 80%;
+	margin: auto;
+	border-radius: 20px;
+	padding-top: 15px;
+}
+
+.target-name-link {
+	text-decoration: none;
+	font-family: verdana,sans-serif;
+	font-size: 25px;
+	color: #ef5859;
+}
+
+.box-content {
+	padding: 0 30px;
+}
+
+.lvl-rwd {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.reward {
+	float: right;
+	font-weight: bold;
+}
+
+.trying {
+	width: 350px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: orange;
+	font-weight: normal;
+}
+
+/* NEW BOUNTY FORM*/
+
+input {
+	opacity: 0.6;
+	width: 200px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+textarea {
+	resize: vertical;
+	max-height: 200px;
+	opacity: 0.6;
+	border-radius: 5px;
+	width: 200px;
+}
+
+select {
+	opacity: 0.6;
+	border-radius: 5px;
+	width: 200px;
+	padding: 5px;
+}
+
+.bounty-form-box {
+	background-color: rgba(0,0,0,0.3);
+	width: 50%;
+	height: 100%;
+	margin: auto;
+	color: white;
+	font-family: verdana,sans-serif;
+	padding-bottom: 30px;
+
+	display: flex;
+	justify-content: center;
+
+}
+
+.new-bounty-title {
+	font-family: verdana,sans-serif;
+	color: red;
+}
+
+.bounty-form-button {
+	border-radius: 5px;
+	padding: 10px;
+	background-color: red;
+	border: none;
+	color: white;
+}
+
+
+/*SHOW BOUNTY*/
+
+.show-ctn {
+	background-color: rgba(0,0,0,0.3);
+	width: 55%;
+	height: 100vh;
+	margin: auto;
+	color: white;
+	font-family: verdana,sans-serif;
+	padding-bottom: 30px;
 }
